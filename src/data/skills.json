@@ -1,0 +1,56 @@
+[
+  {
+    "id":"01",
+    "title": "HTML5",
+    "image": "/skill1.png",
+    "alt": "HTML logo"
+  },
+  {
+    "id":"02",
+    "title": "CSS3",
+    "image": "/skill02.png",
+    "alt": "CSS logo"
+  },
+  {
+    "id":"03",
+    "title": "JAVASCRIPT",
+    "image": "/skill03.png",
+    "alt": "JS logo"
+  },
+  {
+    "id":"04",
+    "title": "REACT",
+    "image": "/skill04.png",
+    "alt": "React logo"
+  },
+    {
+      "id":"05",
+    "title": "BOOTSTRAP",
+    "image": "/skill05.png",
+    "alt": "Bootstrap logo"
+  },
+   {
+    "id":"06",
+    "title": "GIT",
+    "image": "/skill06.png",
+    "alt": "Git logo"
+  },
+    {
+      "id":"07",
+    "title": "FIGMA",
+    "image": "/skill07.png",
+    "alt": "Figma logo"
+  },
+      {
+        "id":"08",
+    "title": "NODEJS",
+    "image": "/skill08.png",
+    "alt": "Nodejs logo"
+  },
+       {
+        "id":"09",
+    "title": "GITHUB",
+    "image": "/skill14.png",
+    "alt": "Github logo"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id":"`12",
+    "title": "TYPESCRIPT",
+    "image": "/skill10.png",
+    "alt": "Type script logo"
+  },
+  {
+    "id":"13",
+    "title": "VUE",
+    "image": "/skill11.png",
+    "alt": "Vue logo"
+  },
+  {
+    "id":"14",
+    "title": "TAILWIND",
+    "image": "/skill12.png",
+    "alt": "Tailwind logo"
+  },
+  {
+    "id":"15",
+    "title": "NEXTJS",
+    "image": "/skill13.png",
+    "alt": "Next js logo"
+  }
+]

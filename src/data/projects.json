@@ -1,0 +1,29 @@
+[
+  {
+    "id": "100",
+    "title": "🐾 Project: PetsMania – Online Pet Store",
+    "shortDescription": "PetsMania is a modern and user-friendly e-commerce website for pet lovers. It offers a wide range of products for cats, dogs, rodents, birds, fish, and reptiles. The website features clean navigation, responsive design, and a bright visual style that appeals to pet owners.",
+    "image": "/project01.png",
+    "alt": "Home page of the site",
+    "category": "Coded",
+    "link": "https://petsmaniyashop.netlify.app/"
+  },
+  {
+    "id": "101",
+    "title": "🎬 Project: Netflix Clone – Movie Streaming UI",
+    "shortDescription": "Organic Food is a e-commercy website designed for a natural food store or healthy lifestyle brand. It promotes organic eating habits with bright visuals, smooth navigation, and responsive design. The layout emphasizes trust, freshness, and well-being.",
+    "image": "/project03.png",
+    "alt": "landing page",
+    "category": "Coded",
+    "link":"https://serene-platypus-6b29b0.netlify.app/"
+  },
+  {
+    "id": "102",
+    "title": "🥗 Project: Organic Food – Healthy Living Website",
+    "shortDescription": "The Netflix Clone is a stylish web application that mimics the layout and functionality of the Netflix platform. Designed to showcase featured content like Stranger Things, it allows users to browse shows, see ratings, and explore episodes. The interface focuses on a cinematic design experience with responsive layout and smooth navigation.",
+    "image": "/project02.png",
+    "alt": "Home page of the site",
+    "category": "Coded",
+    "link":"https://friendly-smakager-0f0932.netlify.app/"
+  }
+]

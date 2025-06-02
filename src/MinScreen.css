@@ -1,0 +1,108 @@
+@media screen and (max-width: 480px) {
+  
+  h1 {
+    font-size: 1.8rem;
+    color: #919191;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  /* .title {
+    padding: 30% 5% 10%;
+  } */
+  .simpleSecondText {
+    font-size: 0.85rem;
+  }
+  .skillCard img {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+  }
+  .siteBtn {
+    width: 80%;
+    padding: 0.5rem;
+  }
+  .contactForm input,
+  .contactForm textarea {
+    font-size: 0.85rem;
+  }
+  .description{
+    top: -3%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .photoBlock{
+    width: 100%;
+    background-color: black;
+  }
+  .photo{
+    width: 100%;
+    position: relative;
+    top: 2%;
+  }
+  .title{
+    position: absolute;
+    z-index: 3000;
+    padding: 30% 5% 10%;
+    top: 30%;
+    left: 2%;
+  }
+  .title h1,
+  .title h2 {
+    color: #fff;
+  }
+  .linkBtnWrap{
+    flex-direction: column;
+    position: absolute;
+    bottom: 20%;
+    right: -66%;
+
+  }
+  .linkBtn{
+    background: none;
+
+  }
+  .deckIcon{
+        color: #919191;
+  }
+  .blockWrap{
+    top: 17%;
+  }
+  .imgWrap {
+    display: none;
+  }
+  .about{
+    margin-top: 150%;
+  }
+  .serviseDesc p {
+    width: 100%;
+  }
+  .cardBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .projectCard{
+    width: 80%;
+  }
+  .portfolioBanner{
+    height: 100px;
+  }
+ #portfolioTitle {
+    top: -11%;
+    left: 30%;
+  }
+  .contactContent{
+    margin-top: 233%;
+  }
+  .projectsBlock {
+    flex-direction: column;
+    align-items: center;
+    margin: 3% 0;
+  }
+  .footerBlock{
+    width: 91%;
+  }
+
+}
+
