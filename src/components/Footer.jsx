@@ -14,13 +14,13 @@ export default function Footer() {
         </div>
 
         <div className="iconsSection">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <i className="fa-brands fa-square-facebook socialIcon"></i>
-          </a>
+          </a> */}
           <a href="https://linkedin.com/in/maryna-arnaut-a84607351/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i className="fa-brands fa-linkedin socialIcon"></i>
           </a>
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/__arnmary__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <i className="fa-brands fa-instagram socialIcon"></i>
           </a>
           <a href="mailto:marinaarnaut482@gmail.com" aria-label="Email">
