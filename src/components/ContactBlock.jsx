@@ -17,56 +17,24 @@ export default function ContactBlock() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    sessionStorage.setItem('contactForm', JSON.stringify({ ...formData, [name]: value }));
   };
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const form = e.target;
-  const formDataToSend = new FormData(form);
-  const encoded = new URLSearchParams(formDataToSend).toString();
-
-  // try {
-  //   const response = await fetch("/?no-cache=1", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //     body: encoded,
-  //   });
-
-  //   const text = await response.text();
-  //   console.log("Status:", response.status);
-  //   console.log("Response text:", text);
-
-  //   if (response.ok) {
-  //     alert("Message sent!");
-  //     setFormData({ name: "", email: "", telephone: "", message: "" });
-  //     sessionStorage.removeItem("contactForm");
-  //   } else {
-  //     alert("Sending failed.");
-  //   }
-  // } catch (error) {
-  //   console.error("Submission error:", error);
-  //   alert("An error occurred.");
-  // }
-};
-
 
   return (
     <div className="contactContent">
-      <h3 className="blockTitle" id='contact'>Contact</h3>
+      <h3 className="blockTitle" id="contact">Contact</h3>
       <p className="simpleText simpleSecondText">
         Have a project in mind or just want to say hello? Feel free to reach out — I'm always open to new opportunities and collaborations in frontend development.
       </p>
-      <img src="./separator.png" alt="Separator image" className="separator" />
+      <img src="./separator.png" alt="Separator" className="separator" />
 
-    
+      {/* Hidden Netlify form for bot detection */}
       <form name="contact" netlify hidden>
-        <input type="hidden" name="form-name" value="contact" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="telephone" />
-        <textarea name="message" />
+        <textarea name="message"></textarea>
       </form>
 
       <form
@@ -74,8 +42,7 @@ const handleSubmit = async (e) => {
         name="contact"
         method="POST"
         data-netlify="true"
-         action="/success" 
-        // onSubmit={handleSubmit}
+        action="/success"
       >
         <input type="hidden" name="form-name" value="contact" />
 
@@ -95,7 +62,7 @@ const handleSubmit = async (e) => {
           placeholder="Email*"
           value={formData.email}
           onChange={handleChange}
-          pattern="^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+          pattern="^[\\w.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
           required
         />
 
@@ -105,7 +72,7 @@ const handleSubmit = async (e) => {
           placeholder="Telephone*"
           value={formData.telephone}
           onChange={handleChange}
-          pattern="^\+?[0-9\s\-]{7,15}$"
+          pattern="^\\+?[0-9\\s\\-]{7,15}$"
         />
 
         <textarea
