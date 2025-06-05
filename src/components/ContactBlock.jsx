@@ -19,32 +19,37 @@ export default function ContactBlock() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const form = e.target;
+  const formDataToSend = new FormData(form);
+  const encoded = new URLSearchParams(formDataToSend).toString();
 
-    const form = e.target;
-    const formDataToSend = new FormData(form);
+  try {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encoded,
+    });
 
-    try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend).toString(),
-      });
+    const text = await response.text();
+    console.log("Status:", response.status);
+    console.log("Response text:", text);
 
-      if (response.ok) {
-        alert('Message sent!');
-        setFormData({ name: '', email: '', telephone: '', message: '' });
-        sessionStorage.removeItem('contactForm');
-      } else {
-        alert('Sending failed.');
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-      alert('An error occurred.');
+    if (response.ok) {
+      alert("Message sent!");
+      setFormData({ name: "", email: "", telephone: "", message: "" });
+      sessionStorage.removeItem("contactForm");
+    } else {
+      alert("Sending failed.");
     }
-  };
+  } catch (error) {
+    console.error("Submission error:", error);
+    alert("An error occurred.");
+  }
+};
+
 
   return (
     <div className="contactContent">
@@ -56,6 +61,7 @@ export default function ContactBlock() {
 
     
       <form name="contact" netlify hidden>
+        <input type="hidden" name="form-name" value="contact" />
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="telephone" />
