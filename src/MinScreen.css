@@ -86,7 +86,8 @@ background-color: var(--deep-dark);
 
   }
   .linkWrap button {
-    color: var(--deep-dark);
+    /* color: var(--deep-dark); */
+    color: var(--white);
   }
   .extendedTitle,
   .extendedList li {
