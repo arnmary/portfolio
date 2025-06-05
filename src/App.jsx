@@ -1,32 +1,23 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MainPageLayout from './MainPageLayout';
+import SuccessPage from './SuccessPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import '../src/reset.css';
 import './App.css';
-import '../src/Style.css';
-import '../src/MinScreen.css'
-import Header from './components/Header';
-import Description from './components/Description';
-import SecondBlock from './components/SecondBlock';
-import AboutBlock from './components/AboutBlock';
-import Skills from './components/Skills';
-import PortfolioBlock from './components/PortfolioBlock';
-import ContactBlock from './components/ContactBlock';
-import Footer from './components/Footer';
+import './reset.css';
+import './Style.css';
+import './MinScreen.css';
 
 function App() {
-
   return (
-    <>
-    <Header/>
-    <Description/>
-    <SecondBlock/>
-    <AboutBlock/>
-    <Skills/>
-    <PortfolioBlock/>
-    <ContactBlock/>
-    <Footer/>
-    </>
-  )
+    <Router>
+      <Routes>
+       <Route path="*" element={<MainPageLayout />} />
+        <Route path="/success" element={<SuccessPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
+
+

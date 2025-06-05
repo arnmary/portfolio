@@ -9,16 +9,17 @@ export default function ContactBlock() {
   });
 
   useEffect(() => {
-    const savedFormData = sessionStorage.getItem('contactForm');
-    if (savedFormData) {
-      setFormData(JSON.parse(savedFormData));
-    }
+    const saved = sessionStorage.getItem('contactForm');
+    if (saved) setFormData(JSON.parse(saved));
   }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-    sessionStorage.setItem('contactForm', JSON.stringify({ ...formData, [name]: value }));
+    setFormData((prev) => {
+      const updated = { ...prev, [name]: value };
+      sessionStorage.setItem('contactForm', JSON.stringify(updated));
+      return updated;
+    });
   };
 
   return (
@@ -29,20 +30,20 @@ export default function ContactBlock() {
       </p>
       <img src="./separator.png" alt="Separator" className="separator" />
 
-      {/* Hidden Netlify form for bot detection */}
       <form name="contact" netlify hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
         <input type="tel" name="telephone" />
-        <textarea name="message"></textarea>
+        <textarea name="message" />
       </form>
 
+    
       <form
-        className="contactForm"
         name="contact"
         method="POST"
         data-netlify="true"
         action="/success"
+        className="contactForm"
       >
         <input type="hidden" name="form-name" value="contact" />
 
@@ -52,29 +53,23 @@ export default function ContactBlock() {
           placeholder="Your Name*"
           value={formData.name}
           onChange={handleChange}
-          pattern="^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{2,}$"
           required
         />
-
         <input
           type="email"
           name="email"
           placeholder="Email*"
           value={formData.email}
           onChange={handleChange}
-          pattern="^[\\w.%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
           required
         />
-
         <input
           type="tel"
           name="telephone"
-          placeholder="Telephone*"
+          placeholder="Telephone"
           value={formData.telephone}
           onChange={handleChange}
-          pattern="^\\+?[0-9\\s\\-]{7,15}$"
         />
-
         <textarea
           name="message"
           placeholder="Message*"
@@ -83,10 +78,11 @@ export default function ContactBlock() {
           onChange={handleChange}
           required
         />
-
         <button type="submit" className="simpleBtn">Submit</button>
       </form>
     </div>
   );
 }
+
+
 
