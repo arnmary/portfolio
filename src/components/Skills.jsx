@@ -22,8 +22,8 @@ function SkillCategory({ title, data }) {
 export default function Skills() {
   return (
     <>
-      <div className="skillsBlock" id="skills">
-        <h3 className="blockTitle skillBlockTitle">Skills</h3>
+      <div className="skillsBlock" >
+        <h3 className="blockTitle skillBlockTitle"id="skills" >Skills</h3>
       </div>
 
       <SkillCategory title="USING NOW:" data={skills} />

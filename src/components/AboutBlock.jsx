@@ -4,8 +4,8 @@ export default function AboutBlock() {
    const [showMore, setShowMore] = useState(false);
   return (
     <>
-    <div className='about'id='about'>
-<h3 className='blockTitle' >
+    <div className='about'>
+<h3 className='blockTitle' id='about' >
 ABOUT ME
 </h3>
 {!showMore ?(
@@ -40,7 +40,7 @@ ABOUT ME
                 If you’re looking for someone thoughtful, creative, and reliable — I’d love to connect and help bring your next idea to life.
                </p>
             <div className='linkWrap'>
-              <button onClick={() => setShowMore(false)} className='simpleBtn aboutBtn'>Hide</button>
+              <button onClick={() => setShowMore(false)} className='simpleBtn aboutBtn' id='aboutBtn'>Hide</button>
             </div>
           </div>
 )}

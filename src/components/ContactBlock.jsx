@@ -20,17 +20,6 @@ export default function ContactBlock() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-
-    sessionStorage.setItem('contactForm', JSON.stringify(formData));
-    console.log('Form submitted:', formData);
-
-      setFormData({ name: '', email: '', telephone: '', message: '' });
-      console.log('Form clened:')
-  };
-
   return (
     <div className="contactContent">
       <h3 className="blockTitle" id='contact'>Contact</h3>
@@ -40,51 +29,60 @@ export default function ContactBlock() {
 
       <img src="./separator.png" alt="Separator image" className="separator" />
 
-      <form className="contactForm" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name*"
-          value={formData.name}
-          onChange={handleChange}
-          pattern="^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{2,}$"
-          title="Name must contain only letters, spaces, apostrophes or hyphens (at least 2 characters)"
-          required
-        />
+     <form
+  className="contactForm"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+>
+  
+  <input type="hidden" name="form-name" value="contact" />
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Email*"
-          value={formData.email}
-          onChange={handleChange}
-          pattern="^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
-          title="Please enter a valid email address"
-          required
-        />
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name*"
+    value={formData.name}
+    onChange={handleChange}
+    pattern="^[A-Za-zА-Яа-яІіЇїЄєҐґ\s'-]{2,}$"
+    title="Name must contain only letters, spaces, apostrophes or hyphens (at least 2 characters)"
+    required
+  />
 
-        <input
-          type="tel"
-          name="telephone"
-          placeholder="Telephone*"
-          value={formData.telephone}
-          onChange={handleChange}
-          pattern="^\+?[0-9\s\-]{7,15}$"
-          title="Phone number must contain only digits, spaces, hyphens, or start with +"
-        />
+  <input
+    type="email"
+    name="email"
+    placeholder="Email*"
+    value={formData.email}
+    onChange={handleChange}
+    pattern="^[\w.%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+    title="Please enter a valid email address"
+    required
+  />
 
-        <textarea
-          name="message"
-          placeholder="Message*"
-          rows="5"
-          value={formData.message}
-          onChange={handleChange}
-          title="Please enter your message"
-          required
-        />
+  <input
+    type="tel"
+    name="telephone"
+    placeholder="Telephone*"
+    value={formData.telephone}
+    onChange={handleChange}
+    pattern="^\+?[0-9\s\-]{7,15}$"
+    title="Phone number must contain only digits, spaces, hyphens, or start with +"
+  />
 
-        <button type="submit" className="simpleBtn">Submit</button>
-      </form>
+  <textarea
+    name="message"
+    placeholder="Message*"
+    rows="5"
+    value={formData.message}
+    onChange={handleChange}
+    title="Please enter your message"
+    required
+  />
+
+  <button type="submit" className="simpleBtn">Submit</button>
+</form>
+
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function SecondBlock() {
               I’ve completed the Frontend Development course from ProgAcademy and studied SEO at Serpstat Academy. I enjoy building intuitive UIs and solving real problems — from idea to final result. I’m self-organized, quick to learn, and always meet deadlines.
             </p>
 
-            <h4 className='extendedTitle'>🛠 My Core Skills:</h4>
+            <h4 className='extendedTitle'> My Core Skills:</h4>
             <ul className='extendedList'>
               <li> React (Hooks, Context, Routing)</li>
               <li> JavaScript ES6+, async/await, fetch API</li>

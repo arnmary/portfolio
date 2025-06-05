@@ -1,5 +1,8 @@
 @media screen and (max-width: 480px) {
-  
+  :root{
+      --deep-dark:black;
+      --white: #fff;
+  }
   h1 {
     font-size: 1.8rem;
     color: #919191;
@@ -7,9 +10,32 @@
   h2 {
     font-size: 1.2rem;
   }
-  /* .title {
-    padding: 30% 5% 10%;
-  } */
+.mobileMenu {
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mobileMenu a {
+  color:var(--white);
+  
+}
+
+.mobileMenu a:hover {
+  color: var(--deep-dark);
+  background-color: var(--white);
+  width: 90%;
+}
+.contactDropdown a{
+background-color: var(--deep-dark);
+
+  }
+.secondDescBlock{
+  width: 100%;
+}
   .simpleSecondText {
     font-size: 0.85rem;
   }
@@ -17,6 +43,7 @@
     max-width: 2.5rem;
     max-height: 2.5rem;
   }
+ 
   .siteBtn {
     width: 80%;
     padding: 0.5rem;
@@ -32,11 +59,12 @@
   }
   .photoBlock{
     width: 100%;
-    background-color: black;
+    background-color:var(--deep-dark);
   }
   .photo{
     width: 100%;
     position: relative;
+    margin-top: 13%;
     top: 2%;
   }
   .title{
@@ -48,7 +76,7 @@
   }
   .title h1,
   .title h2 {
-    color: #fff;
+    color: var(--white);
   }
   .linkBtnWrap{
     flex-direction: column;
@@ -57,6 +85,21 @@
     right: -66%;
 
   }
+  .linkWrap button {
+    color: var(--deep-dark);
+  }
+  .extendedTitle,
+  .extendedList li {
+text-align: start;
+  }
+  #about,
+  #skills,
+  #portfolioTitle,
+  #contact{
+    border: 0.2rem solid var(--deep-dark);
+    width: 30%;
+  }
+
   .linkBtn{
     background: none;
 
@@ -65,13 +108,16 @@
         color: #919191;
   }
   .blockWrap{
-    top: 17%;
+    top: 22%;
   }
   .imgWrap {
     display: none;
   }
   .about{
-    margin-top: 150%;
+    margin-top: 170%;
+  }
+  .aboutBlock button{
+    color: var(--deep-dark);
   }
   .serviseDesc p {
     width: 100%;
@@ -86,10 +132,10 @@
     width: 80%;
   }
   .portfolioBanner{
-    height: 100px;
+    height: 6.25rem;
   }
  #portfolioTitle {
-    top: -11%;
+    top: -6.25rem;
     left: 30%;
   }
   .contactContent{
