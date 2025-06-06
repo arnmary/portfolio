@@ -708,4 +708,25 @@ color:#8B8B8B;
 .footerBlock{
   width: 95%;
 }
+.successBlock{
+ width: 100%; 
+ height: '100vh';
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+background-color: var(--light-gray);
+color: #333;
+text-align: center;
+}
+.successBlock h2,
+.successBlock p{
+  color: var(--dark-gray);
+  font-family: var(--second-font);
+}
+
+.successBtn{
+color: var(--dark-gray);
+text-decoration: none;
+}
 }
