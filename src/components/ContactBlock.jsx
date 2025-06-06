@@ -42,7 +42,7 @@ export default function ContactBlock() {
         name="contact"
         method="POST"
         data-netlify="true"
-        action="/success"
+        onSubmit={() => window.location.href = "/success"}
         className="contactForm"
       >
         <input type="hidden" name="form-name" value="contact" />
