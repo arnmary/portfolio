@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPageLayout from './MainPageLayout';
-import SuccessPage from './SuccessPage';
+import SuccessPage from './components/SuccessPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './App.css';
 import './reset.css';
