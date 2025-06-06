@@ -12,7 +12,7 @@ function App() {
     <Router>
       <Routes>
        <Route path="*" element={<MainPageLayout />} />
-        <Route path="/success" element={<SuccessPage />} />
+         <Route path="/success" element={<SuccessPage />} />
       </Routes>
     </Router>
   );
