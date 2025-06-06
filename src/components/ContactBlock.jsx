@@ -22,6 +22,19 @@ export default function ContactBlock() {
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    })
+    .then(() => window.location.href = "/success")
+    .catch((error) => alert("Sending failed. Try again later."));
+  };
+
   return (
     <div className="contactContent">
       <h3 className="blockTitle" id="contact">Contact</h3>
@@ -30,6 +43,7 @@ export default function ContactBlock() {
       </p>
       <img src="./separator.png" alt="Separator" className="separator" />
 
+     
       <form name="contact" netlify hidden>
         <input type="text" name="name" />
         <input type="email" name="email" />
@@ -42,7 +56,7 @@ export default function ContactBlock() {
         name="contact"
         method="POST"
         data-netlify="true"
-        onSubmit={() => window.location.href = "/success"}
+        onSubmit={handleSubmit}
         className="contactForm"
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -83,6 +97,7 @@ export default function ContactBlock() {
     </div>
   );
 }
+
 
 
 
